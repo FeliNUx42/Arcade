@@ -627,6 +627,10 @@ void setup() {
   while (pressed) {
     r.draw();
 
+    matrix.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
+    life.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
+
+
     for (byte i = 0; i < 4; i++) {
       if (btnPressed(i)) pressed = 0;
     }
@@ -659,6 +663,7 @@ void race() {
       game.lShifted = millis();
 
       matrix.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
+      life.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
     }
   }
 }
@@ -680,6 +685,7 @@ void snake() {
       game.lShifted = millis();
 
       matrix.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
+      life.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
     }
   }
 }
@@ -701,6 +707,7 @@ void tetris() {
       game.lShifted = millis();
 
       matrix.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
+      life.setBrightness(map(analogRead(BRIGHT_PIN), 0, 1023, 5, 255));
     }
   }
 }
